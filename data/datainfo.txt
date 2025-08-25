@@ -1,0 +1,5 @@
+Dataset Info.
+
+samples.csv [파일] : 16541개 예시 샘플
+user_prompt : 입력 문장
+output : 입력 문장에 대해 4가지 속성으로 분류한 출력 결과
