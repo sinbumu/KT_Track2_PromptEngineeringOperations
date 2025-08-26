@@ -3,3 +3,5 @@ date_kst,prompt_file,variant,notes,public_score,private_score,length_chars,ko_ra
 2025-08-25T19:08:32+0900,prompts/system_v1_variants/system_v1_ko_20250825_A.txt,2025-08-25-A,기본 시제=과거,0.643339048,,1915,0.7394
 2025-08-25T19:08:32+0900,prompts/system_v1_variants/system_v1_ko_20250825_B.txt,2025-08-25-B,우선순위 조정 추론형 우선,0.643339048,,1915,0.7394
 2025-08-25T19:09:05+0900,prompts/system_v1_variants/system_v1_ko_20250825_C.txt,2025-08-25-C,미래 확정 이벤트=사실형·미래·확실,0.629474098,,2019,0.7405
+2025-08-26T09:58:55+0900,prompts/system_v1_variants/system_v1_ko_20250826_A.txt,2025-08-26-A,예측형 트리거 축소+미래=시간표현 필수,,,1896,0.7352
+2025-08-26T09:58:55+0900,prompts/system_v1_variants/system_v1_ko_20250826_B.txt,2025-08-26-B,부정 극성 트리거 강화,,,1428,0.7423
