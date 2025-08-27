@@ -92,6 +92,8 @@ CERTAIN_WORDS = [
     "확정", "체결", "승인", "공시", "발표했다", "판결", "계약 체결", "발표문", "판결문",
 ]
 
+CONTRAST_CONJ = ["하지만", "그러나", "반면", "다만"]
+
 
 @dataclass
 class VariantConfig:
@@ -137,11 +139,27 @@ VARIANTS: Dict[str, VariantConfig] = {
         strengthen_negative_polarity=True,
         enable_mitigation_exception=True,
     ),
+    # 27_C: 27_B 기반, 예측형 완화 규칙 반영
+    "27_C": VariantConfig(
+        name="27_C",
+        require_time_for_future_tense=True,
+        strengthen_negative_polarity=True,
+        enable_mitigation_exception=True,
+    ),
 }
 
 
 def contains_any(text: str, keywords: Iterable[str]) -> bool:
     return any(k for k in keywords if k and k in text)
+
+
+def prefer_after_contrast_clause(text: str) -> str:
+    # 접속사 이후 절만 추출하여 극성 감지에 사용
+    for cj in CONTRAST_CONJ:
+        idx = text.find(cj)
+        if idx != -1:
+            return text[idx:]
+    return text
 
 
 def detect_type(text: str) -> str:
@@ -154,6 +172,17 @@ def detect_type(text: str) -> str:
     if contains_any(text, FACT_REPORT_KEYWORDS):
         return "사실형"
     return "사실형"
+
+
+def detect_type_with_prediction_relax(text: str, cfg: VariantConfig) -> str:
+    # 예측형 과대 완화: 시간표현 없는 전망/가능성 등은 추론형으로 우회
+    base_pred = contains_any(text, PRED_KEYWORDS_BASE)
+    has_time = contains_any(text, TIME_EXPRESSIONS)
+    if base_pred and not has_time:
+        # 전망/가능성 등만 있을 때는 추론형
+        if contains_any(text, ["전망", "예상", "가능성", "추정", "관측", "시사"]):
+            return "추론형"
+    return detect_type(text)
 
 
 def detect_tense(text: str, cfg: VariantConfig) -> str:
@@ -179,11 +208,15 @@ def detect_certainty(text: str) -> str:
 
 
 def detect_polarity(text: str, cfg: VariantConfig) -> str:
-    has_neg = contains_any(text, NEG_WORDS) or contains_any(text, NEG_MORPH)
-    has_pos = contains_any(text, POS_WORDS)
+    # 27_C: 대조 접속사 이후 절 우선
+    if cfg.name == "27_C":
+        text_eval = prefer_after_contrast_clause(text)
+    else:
+        text_eval = text
+    has_neg = contains_any(text_eval, NEG_WORDS) or contains_any(text_eval, NEG_MORPH)
+    has_pos = contains_any(text_eval, POS_WORDS)
     if cfg.strengthen_negative_polarity and has_neg:
-        if cfg.enable_mitigation_exception and contains_any(text, MITIGATION_WORDS):
-            # 27_A는 긍정으로 반전, 27_B/26_C는 미정으로 완화
+        if cfg.enable_mitigation_exception and contains_any(text_eval, MITIGATION_WORDS):
             if cfg.name == "27_A":
                 return "긍정"
             else:
@@ -224,7 +257,11 @@ def evaluate(csv_path: str, cfg: VariantConfig, limit: int | None = None) -> Dic
             except Exception:
                 continue
 
-            p_type = detect_type(text)
+            # 유형 탐지: 27_C에서는 완화 버전 사용
+            if cfg.name == "27_C":
+                p_type = detect_type_with_prediction_relax(text, cfg)
+            else:
+                p_type = detect_type(text)
             p_tense = detect_tense(text, cfg)
             p_cert = detect_certainty(text)
             p_pol = detect_polarity(text, cfg)
