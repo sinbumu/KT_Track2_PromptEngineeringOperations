@@ -6,5 +6,5 @@ date_kst,prompt_file,variant,notes,public_score,private_score,length_chars,ko_ra
 2025-08-26T09:58:55+0900,prompts/system_v1_variants/system_v1_ko_20250826_A.txt,2025-08-26-A,예측형 트리거 축소+미래=시간표현 필수,0.644017971,,1896,0.7352
 2025-08-26T09:58:55+0900,prompts/system_v1_variants/system_v1_ko_20250826_B.txt,2025-08-26-B,부정 극성 트리거 강화,0.6579028506,,1428,0.7423
 2025-08-26T10:40:46+0900,prompts/system_v1_variants/system_v1_ko_20250826_C.txt,2025-08-26-C,부정 강화+B안 + 미래=시간표현 필수 + 부정 완화 예외,0.6585639941,,1738,0.7394
-2025-08-26T13:51:29+0900,prompts/system_v1_variants/system_v1_ko_20250827_A.txt,2025-08-27-A,극성 완화 예외 시 긍정 반전,,,1649,0.7471
-2025-08-26T13:51:29+0900,prompts/system_v1_variants/system_v1_ko_20250827_B.txt,2025-08-27-B,극성 완화 예외 시 미정 완화(보수),,,668,0.7605
+2025-08-26T13:51:29+0900,prompts/system_v1_variants/system_v1_ko_20250827_A.txt,2025-08-27-A,극성 완화 예외 시 긍정 반전,0.658869729,,1649,0.7471
+2025-08-26T13:51:29+0900,prompts/system_v1_variants/system_v1_ko_20250827_B.txt,2025-08-27-B,극성 완화 예외 시 미정 완화(보수),0.6718409624,,668,0.7605
