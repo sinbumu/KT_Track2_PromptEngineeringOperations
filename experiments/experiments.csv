@@ -12,3 +12,5 @@ date_kst,prompt_file,variant,notes,public_score,private_score,length_chars,ko_ra
 2025-08-28T10:34:22+0900,prompts/system_v1_variants/system_v1_ko_20250828_A.txt,2025-08-28-A,27_B 개선판(완화 확장+안정화/견조/안정화 추가),0.1577686289,,1384,0.7341
 2025-08-28T10:34:22+0900,prompts/system_v1_variants/system_v1_ko_20250828_B.txt,2025-08-28-B,초간결 컨텍스트(성능-길이 가설 검증),0.6713606295,,678,0.7065
 2025-08-28T13:50:02+0900,prompts/system_v1_variants/system_v1_ko_20250828_C.txt,2025-08-28-C,27_B 최소 변경: 전망/가능성 무시간→추론형,0.6833767241,,773,0.7671
+2025-08-29T10:44:10+0900,prompts/system_v1_variants/system_v1_ko_20250829_A.txt,2025-08-29-A,인용 강제 사실형·과거·확실 + 예측형 완화 유지,,,609,0.7373
+2025-08-29T10:44:10+0900,prompts/system_v1_variants/system_v1_ko_20250829_B.txt,2025-08-29-B,강한 긍정 오버라이드(중대 부정 사건 예외),,,425,0.7482
