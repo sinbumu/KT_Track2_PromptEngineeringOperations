@@ -17,4 +17,4 @@ date_kst,prompt_file,variant,notes,public_score,private_score,length_chars,ko_ra
 2025-08-29T14:19:41+0900,prompts/system_v1_variants/system_v1_ko_20250829_C.txt,2025-08-29-C,28_C 기반,0.6630310277,,,820,0.7707
 2025-09-03T10:12:52+0900,prompts/system_v1_variants/system_v1_ko_20250903_A.txt,2025-09-03-A,28_C 기반+공식 일정 예외(날짜+기관=미래·확실),,,895,0.7654
 2025-09-03T10:12:52+0900,prompts/system_v1_variants/system_v1_ko_20250903_B.txt,2025-09-03-B,초간결 최소 토큰 판정표,,,555,0.7063
-2025-09-04T10:13:03+0900,prompts/system_v1_variants/system_v1_ko_20250904_C.txt,2025-09-04-C,28_C 기반 완화 목록 정제(효과 불안정/중복 제거),,,807,0.7670
+2025-09-04T10:13:03+0900,prompts/system_v1_variants/system_v1_ko_20250904_C.txt,2025-09-04-C,28_C 기반 완화 목록 정제(효과 불안정/중복 제거),0.6707584296,,807,0.7670
