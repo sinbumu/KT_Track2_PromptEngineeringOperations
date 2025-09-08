@@ -24,3 +24,5 @@ date_kst,prompt_file,variant,notes,public_score,private_score,length_chars,ko_ra
 2025-09-06T11:02:18+0900,prompts/system_v1_variants/system_v1_ko_20250906_A.txt,2025-09-06-A,극성 정밀화(강한 부정/완화 억제어),,,441,0.7596
 2025-09-06T11:02:18+0900,prompts/system_v1_variants/system_v1_ko_20250906_B.txt,2025-09-06-B,예측형 추가 완화+확실성 불확실 우선,,,343,0.7405
 2025-09-06T11:13:09+0900,prompts/system_v1_variants/system_v1_ko_20250906_C.txt,2025-09-06-C,28_C+06_B 규칙 채택+공식예외 축소,0.6812607525,,467,0.7516
+2025-09-08T18:00:54+0900,prompts/system_v1_variants/system_v1_ko_20250908_A.txt,2025-09-08-A,06_C 기반: 공식 일정 예외 추가 축소(공시/판결만),,,371,0.7547
+2025-09-08T18:00:54+0900,prompts/system_v1_variants/system_v1_ko_20250908_B.txt,2025-09-08-B,06_C 기반: 완화 목록에서 ‘반등’ 제거,,,293,0.7372
