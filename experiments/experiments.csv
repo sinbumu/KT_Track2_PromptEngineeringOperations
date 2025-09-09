@@ -27,3 +27,5 @@ date_kst,prompt_file,variant,notes,public_score,private_score,length_chars,ko_ra
 2025-09-08T18:00:54+0900,prompts/system_v1_variants/system_v1_ko_20250908_A.txt,2025-09-08-A,06_C 기반: 공식 일정 예외 추가 축소(공시/판결만),,,371,0.7547
 2025-09-08T18:00:54+0900,prompts/system_v1_variants/system_v1_ko_20250908_B.txt,2025-09-08-B,06_C 기반: 완화 목록에서 ‘반등’ 제거,,,293,0.7372
 2025-09-08T18:08:03+0900,prompts/system_v1_variants/system_v1_ko_20250908_C.txt,2025-09-08-C,06_C 기반: 완화 적용 조건 강화(부정≥2면 완화 금지),0.6707466635,,445,0.7640
+2025-09-09T10:54:34+0900,prompts/system_v1_variants/system_v1_ko_20250909_A.txt,2025-09-09-A,06_C 베이스: 예외 공시/판결 한정 재확인,,,436,0.7477
+2025-09-09T10:54:34+0900,prompts/system_v1_variants/system_v1_ko_20250909_B.txt,2025-09-09-B,06_C 베이스: 완화 금지 임계치=3,,,371,0.7305
