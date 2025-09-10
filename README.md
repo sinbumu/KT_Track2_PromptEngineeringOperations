@@ -16,10 +16,12 @@
 .
 ├─ prompts/
 │  ├─ system_v1_ko.txt            # 기준 시스템 프롬프트
-│  └─ system_v1_variants/         # A/B 변형 프롬프트
+│  ├─ system_v1_variants/         # A/B/C 변형 프롬프트
+│  └─ final/                      # 최종 산출물(최고/차선)
 ├─ outputs/                        # 제출 직전 결과물(원본 보존)
 ├─ tools/
-│  └─ validate_outputs.py         # 로컬 형식 검증기
+│  ├─ validate_outputs.py         # 로컬 형식 검증기
+│  └─ offline_eval.py             # 규칙 기반 오프라인 추정(참고용)
 └─ experiments/
    ├─ experiments.csv             # 제출 로그(점수/길이/한글비율 등)
    └─ notes.md                    # 관찰/가설/교훈 노트
@@ -49,5 +51,10 @@ python tools/validate_outputs.py outputs/YYYYMMDD_HHMM_run.txt
 
 ### 라이선스
 - 개인 사용 목적의 대회 운영 저장소입니다. 대회 규칙에 따라 외부 공유/재배포는 제한될 수 있습니다.
+
+### 최종 산출물/요약/태그
+- 최종 요약: `FINAL_SUMMARY.md`
+- 아카이브: `ARCHIVE.md` (최고점 `prompts/final/FINAL_28C.txt`, 차선 `prompts/final/FINAL_06C.txt`)
+- 최종 태그: `final-20250910`
 
 
